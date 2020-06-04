@@ -1,0 +1,67 @@
+#welcome {
+    font-size: 1.2rem;
+    position: relative;
+}
+#welcome h1 {
+    position: relative;
+    padding-bottom: 10px;
+}
+#welcome h1::after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: var(--default-gradient);
+}
+#Typewriter {
+    width: 100%;
+    height: 200px;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 10px;
+}
+
+#mySkills {
+    background-image: linear-gradient(to bottom, transparent, #c3c1d6);
+}
+
+#mySkills > div {
+    background-color: #FFF;
+    box-shadow: 0 5px 15px #c3c1d6;
+}
+
+#myServices {
+    max-width: 700px;
+    margin: 50px auto;
+}
+#myServices > div:last-child > div.row {
+    box-shadow: 0 5px 15px #c3c1d6;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px auto;
+    display: flex;
+}
+#myServices > div:last-child > div.row:nth-child(even) {
+    margin-left: -10vw;
+}
+#myServices > div:last-child > div.row:nth-child(odd) {
+    margin-right: -10vw;
+}
+#myServices > div:last-child svg {
+    font-size: calc(1.3rem + 4.6vw);
+    padding: 0;
+    color: var(--theme-first-color);
+    margin: auto;
+}
+
+@media (max-width: 992px) {
+    #welcome > img {
+        height: 300px;
+    }
+    #myServices h2 {
+        font-size: 1.5rem;
+    }
+}
