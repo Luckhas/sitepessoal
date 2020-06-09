@@ -1,4 +1,8 @@
 footer {
-    height: 500px;
+    padding: 15px 0;
     background-color: black;
+    color: #FFF;
+}
+footer #symbol {
+    height: 2rem;
 }

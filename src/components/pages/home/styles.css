@@ -25,36 +25,86 @@
 }
 
 #mySkills {
-    background-image: linear-gradient(to bottom, transparent, #c3c1d6);
+    background-image: linear-gradient(to bottom, transparent, transparent, #c3c1d6);
+    background-position: ;
+    overflow: hidden;
 }
 
 #mySkills > div {
     background-color: #FFF;
     box-shadow: 0 5px 15px #c3c1d6;
 }
+#mySkills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#mySkills ul li {
+    padding: 5px 0;
+    border-bottom: 2px solid #0001;
+}
+#mySkills ul li::before {
+    content: "\00BB \0020";
+    font-weight: 800;
+}
+
+#mySkills h3 {
+    font-weight: 600;
+    padding-top: 5px;
+}
+
+#mySkills svg {
+    opacity: .6;
+}
 
 #myServices {
     max-width: 700px;
     margin: 50px auto;
 }
+.wave {
+    padding-bottom: 50px;
+    background-image: url(/assets/images/wave.svg);
+    background-size: cover;
+    box-shadow: 0 5px 15px -15px #c3c1d6;
+}
 #myServices > div:last-child > div.row {
-    box-shadow: 0 5px 15px #c3c1d6;
+    box-shadow: 0 5px 15px -15px #c3c1d6;
+    background-color: #FFF;
     border-radius: 20px;
     padding: 30px;
     margin: 30px auto;
     display: flex;
 }
-#myServices > div:last-child > div.row:nth-child(even) {
-    margin-left: -10vw;
-}
-#myServices > div:last-child > div.row:nth-child(odd) {
-    margin-right: -10vw;
-}
+
 #myServices > div:last-child svg {
     font-size: calc(1.3rem + 4.6vw);
     padding: 0;
     color: var(--theme-first-color);
     margin: auto;
+}
+
+#portfolio {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#contact {
+    padding: 30px;
+    background-color: #c3c1d611;
+    box-shadow: 0 5px 15px #c3c1d6;
+}
+
+.Toastify__toast--success {
+    background: var(--theme-first-color)!important;
+}
+
+@media (min-width: 992px) {
+    #myServices > div:last-child > div.row:nth-child(even) {
+        margin-left: -10vw;
+    }
+    #myServices > div:last-child > div.row:nth-child(odd) {
+        margin-right: -10vw;
+    }
 }
 
 @media (max-width: 992px) {

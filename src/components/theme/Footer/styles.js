@@ -5,13 +5,12 @@ import { Container, Row, Col } from 'react-bootstrap';
 export const Footer = () => {
     return(
         <footer className="container-fluid text-center">
-            <Container>
-                <Row>
-                    <Col>a</Col>
-                    <Col>b</Col>
-                    <Col>c</Col>
-                </Row>
-            </Container>
+            <div className="container">
+                <img id="symbol" src="/assets/images/lucas-ferreira-simbolo.svg"/>
+                <p className="mt-2">
+                    Feito com &#128150; por  <strong>Lucas Ferreira &copy;</strong>  2020 - Todos os direito reservados
+                </p>
+            </div>
         </footer>
     );
 }
