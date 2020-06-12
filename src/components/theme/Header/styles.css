@@ -8,6 +8,7 @@ header > #navbar {
     text-transform: uppercase;
     font-weight: 700;
     position: relative;
+    cursor: pointer;
 }
 #mainNavBar a::after {
     content: '';
@@ -30,13 +31,45 @@ header .navbar-brand img {
     margin: 10px 0;
 }
 
+.navbar-toggler-icon {
+    color: #FFF;
+}
+
 
 /* BREAKPOINTS EDITS */
+@media (max-width: 991px) {
+    #navbar {
+        padding: 0;
+    }
+    .navbar {
+        padding: 0;
+    }
+    .navbar-brand {
+        margin-left: 15px;
+    }
+    .navbar-toggler {
+        margin-right: 15px;
+    }
+    #mainNavBar {
+        padding: 15px;
+        background-color: #FFF;
+        z-index: 999;
+    }
+    #mainNavBar a {
+        color: #000!important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    #mainNavBar {
+        box-shadow: 0 5px 15px #c3c1d6;
+    }
+}
 @media (max-width: 768px) {
     header > #navbar {
         height: 110px;
-        background: url('/assets/images/headerCurvedPath.svg') no-repeat center bottom / 150%,
-                    var(--default-gradient);
+        background: var(--default-gradient);
+        /* background: url('/assets/images/headerCurvedPath.svg') no-repeat center bottom / 150%,
+        var(--default-gradient); */
     }
 }
 @media (max-width: 576px) {

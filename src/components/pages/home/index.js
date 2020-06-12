@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowRestore, faAddressCard, faMarker, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
-import { faAdobe } from '@fortawesome/free-brands-svg-icons';
+import { faWindowRestore, faAddressCard, faMarker, faLaptopCode, faCogs, faFileAlt, faHashtag, faImages } from '@fortawesome/free-solid-svg-icons';
+import { faAdobe, faInstagram, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
 import api from '../../../services/api';
 import { toast } from 'react-toastify';
 
@@ -12,6 +11,7 @@ import './styles.css';
 import { Portfolio } from '../../portfolio';
 
 export const Home = () => {
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -45,8 +45,6 @@ export const Home = () => {
                 });
         });
     }
-
-    const notify = () => toast("Wow so easy !");
 
     return (
         <main className="container-fluid p-0">
@@ -85,7 +83,7 @@ export const Home = () => {
                 </div>
             </div>
 
-            <div className="container text-right my-5">
+            <div id="aboutMe" className="container text-right my-5">
                 <h1>Aqui um pouquinho sobre mim!</h1>
             </div>
 
@@ -94,7 +92,13 @@ export const Home = () => {
                     <div className="row">
                         <div className="col">
                             <h3><FontAwesomeIcon icon={faAddressCard}/> Sobre mim</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta fugiat aperiam consequuntur iure. At a earum itaque! Necessitatibus, vel veritatis minima reiciendis sapiente qui aperiam reprehenderit vitae quisquam iure rerum totam itaque, tempora eius sed ex iste eum non? Sint iusto fuga ad maxime veritatis consequatur inventore. Qui, officiis sequi!</p>
+                            <p>Meu nome é Lucas Ferreira, nasci no estado de Minas Gerais e tenho 26 anos atualmente.</p>
+
+                            <p>Sou estudante de Engenharia de Software e gosto bastante da área de desenvolvimento web.</p>
+
+                            <p>Faço freelas para desenvolvimento de sites, blog, apps etc...</p>
+
+                            <p>Mas também faço artes digitais tanto para impressão quanto para web. Se precisar de alguem para dar uma revitalizada nas suas redes sociais ou na identidade visual do seu negócio, pode contar comigo ;) </p>
                         </div>
                         <div className="col">
                             <h3><FontAwesomeIcon icon={faMarker}/> Habilidades com Design</h3>
@@ -134,37 +138,65 @@ export const Home = () => {
                         <div className="row">
                             <div className="col text-right">
                                 <h2>Criação de Sites</h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eligendi debitis excepturi amet, asperiores ipsum. Exercitationem recusandae provident commodi vero?</p>
+                                <p>
+                                    Posso criar belos sites para sua empresa ou negócio. Layouts limpos, agradaveis e resposivos para todos os tipos de tela.
+                                </p>
                             </div>
                             <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5"/>
                         </div>
                         <div className="row">
-                            <FontAwesomeIcon icon={faWindowRestore}  className="col-3 col-sm-5" />
+                            <FontAwesomeIcon icon={faCogs}  className="col-3 col-sm-5" />
                             <div className="col text-left">
                                 <h2>Desenvolvimento de Sistemas</h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eligendi debitis excepturi amet, asperiores ipsum. Exercitationem recusandae provident commodi vero?</p>
+                                <p>
+                                    Você tem alguma ideia inovadora para o mercado, mas não sabe como tirar do papel? Ou precisa de um sistema para controlar o estoque da sua empresa?
+                                </p>
+                                <p>
+                                 Já sei, você está querendo criar sua nova loja online mas não sabe como?
+                                </p>
+                                <p>
+                                    Bem, posso fazer tudo isso para você!
+                                </p>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col text-right">
                                 <h2>Implementação de Plataformas</h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eligendi debitis excepturi amet, asperiores ipsum. Exercitationem recusandae provident commodi vero?</p>
+                                <p>
+                                    Existe alguma plataforma que você queria usar, mas não sabe por onde começar a implementa-la, como usar as ferramentas e instalar os plugins necessário para seu projeto ficar redondinho? 
+                                </p>
+                                <p>
+                                    Comprou algum novo script para instalar no seu servidor, mas não tem o conhecimento para instala-la?
+                                </p>
+                                <p>
+                                    Chama no zap que podemos dar um jeito nisso.
+                                </p>
                             </div>
-                            <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faFileAlt} className="col-3 col-sm-5"/>
                         </div>
                         <div className="row">
-                            <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faHashtag} className="col-3 col-sm-5"/>
                             <div className="col text-left">
                                 <h2>Design para Redes Sociais</h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eligendi debitis excepturi amet, asperiores ipsum. Exercitationem recusandae provident commodi vero?</p>
+                                <p>
+                                    Banners para canais do Youtube, Twitch e Mixer...
+                                </p>
+                                <p>
+                                    Capas para página do Facebook, artes para postagens no Instagram e Twitter.
+                                </p>
+                                <p>
+                                    Seja o que for, se der pra criar no Photoshop eu to lá.
+                                </p>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col text-right">
                                 <h2>Artes para impressão</h2>
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo eligendi debitis excepturi amet, asperiores ipsum. Exercitationem recusandae provident commodi vero?</p>
+                                <p>
+                                    Tradicional design gráfico. Banners, Flyers, Folhetos, Cartões de Visitas e tudo que cerca essa área. Meu Illustrator ao seu dispor.
+                                </p>
                             </div>
-                            <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faImages} className="col-3 col-sm-5"/>
                         </div>
                     </div>
                 </div>
@@ -173,9 +205,63 @@ export const Home = () => {
             <div id="portfolio">
                 <h1 className="text-center my-5">Portfolio</h1>
                 <div className="portfolioContainer">
-                    <Portfolio bg="https://picsum.photos/id/237/500/500"/>
-                    <Portfolio bg="https://picsum.photos/id/238/500/500"/>
-                    <Portfolio bg="https://picsum.photos/id/239/500/500"/>
+                    <Portfolio
+                        title="Baymex"
+                        type="Canal Youtube"
+                        url="https://www.behance.net/gallery/80706539/Arte-para-Youtube-Baymex"
+                        bg="/assets/images/portfolio/baymex-small.jpg"
+                    />
+                    <Portfolio
+                        title="Peter Jordan"
+                        type="Canal Twitch"
+                        url="https://www.behance.net/gallery/80706931/Painis-canal-Twitch-peterjordan"
+                        bg="/assets/images/portfolio/peter-small.jpg"
+                    />
+                    <Portfolio
+                        title="LukeraOn"
+                        type="Banner para Youtube"
+                        url="https://www.behance.net/gallery/91592393/Banner-canal-Lukera"
+                        bg="/assets/images/portfolio/lukera-small.jpg"
+                    />
+                    <Portfolio
+                        title="Wolf Shakkal"
+                        type="Arte para Mixer"
+                        url="https://www.behance.net/gallery/91592555/Arte-para-canal-na-Mixer-Wolf-Shakkal"
+                        bg="/assets/images/portfolio/shakkal-small.jpg"
+                    />
+                    <Portfolio
+                        title="Victor Kratos"
+                        type="Arte para Mixer"
+                        url="https://www.behance.net/gallery/91592785/Arte-para-canal-na-Mixer-Victor-Kratos"
+                        bg="/assets/images/portfolio/victorkratos-small.jpg"
+                    />
+                    <Portfolio
+                        title="Unit Web Design"
+                        type="Web Site"
+                        url="https://www.behance.net/gallery/34703767/Unit-WebDesign-Programacao"
+                        bg="/assets/images/portfolio/1-small.jpg"
+                    />
+                    <Portfolio
+                        title="Kodda Store"
+                        type="Template Mercado Livre"
+                        url="https://www.behance.net/gallery/49321801/Koddas-ML-template"
+                        bg="/assets/images/portfolio/2-small.jpg"
+                    />
+                    <Portfolio
+                        title="Template de Panfleto"
+                        type="Panfleto"
+                        url="https://www.behance.net/gallery/42715399/Pamphlet-template"
+                        bg="/assets/images/portfolio/3-small.jpg"
+                    />
+                    <Portfolio
+                        title="Maltarolando"
+                        type="Banner para Youtube"
+                        url="https://www.behance.net/gallery/35379891/Maltarolandos-new-visual-identity"
+                        bg="/assets/images/portfolio/4-small.jpg"
+                    />
+                </div>
+                <div className="text-center p-3">
+                    <a href="https://www.behance.net/LucasFerreiraBrazil" target="_blank">&#187; Confira meu portfólio completo do Behance &#171;</a>
                 </div>
             </div>
 
@@ -194,10 +280,16 @@ export const Home = () => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="formMessage">Mensagem</label>
-                        <textarea className="form-control" id="formMessage" name="message" rows="4" onChange={e => setMessage(e.target.value)}></textarea>
+                        <textarea className="form-control" id="formMessage" placeholder="Escreva sua mensagem aqui" name="message" rows="4" onChange={e => setMessage(e.target.value)}></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary mb-2">Enviar mensagem</button>
                 </form>
+            </div>
+
+            <div id="socialMedias">
+                <a href="https://www.instagram.com/me.lucasferreira/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href="https://www.youtube.com/channel/UC-D7taGaOyz5CbigL5wlulQ?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
+                {/* <a href="https://github.com/Luckhas" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a> */}
             </div>
         </main>
     );

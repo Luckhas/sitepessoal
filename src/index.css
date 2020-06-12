@@ -2,6 +2,9 @@
   --default-gradient: linear-gradient(45deg, #071590 0, #ff003c 100%);
   --theme-first-color: #C60851;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
