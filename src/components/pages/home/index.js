@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowRestore, faAddressCard, faMarker, faLaptopCode, faCogs, faFileAlt, faHashtag, faImages } from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +15,18 @@ export const Home = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [sended, setSended] = useState(false);
+
+    useEffect(() => {
+        const id = setTimeout(() => {
+            setSended(false);
+        }, 15000);
+        return () => clearTimeout(id);
+    }, [sended]);
 
     function handleResquest(e) {
         e.preventDefault();
+        if(sended) return;
         api.post(
             '/mainApplication/sendMail.php',
             {
@@ -32,7 +41,8 @@ export const Home = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
+            });
+            setSended(true);
         }).catch(error => {
             toast.warn('Ouve algum problema ao enviar sua mensagem 😢', {
                 position: "top-right",
@@ -49,7 +59,7 @@ export const Home = () => {
     return (
         <main className="container-fluid p-0">
             <div id="welcome" className="container row mx-auto">
-                <img src="/assets/images/welcomeArt.svg" className="col order-lg-2" />
+                <img src="/assets/images/welcomeArt.svg" className="col mt-3 mt-lg-0 order-lg-2" />
                 <div className="d-flex justify-content-center align-items-center col-lg-6">
                     <div>
                         <h1>Olá, meu nome é<br /> <strong>Lucas Ferreira</strong> &#128075;</h1>

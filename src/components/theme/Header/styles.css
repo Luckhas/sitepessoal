@@ -66,10 +66,8 @@ header .navbar-brand img {
 }
 @media (max-width: 768px) {
     header > #navbar {
-        height: 110px;
+        height: initial;
         background: var(--default-gradient);
-        /* background: url('/assets/images/headerCurvedPath.svg') no-repeat center bottom / 150%,
-        var(--default-gradient); */
     }
 }
 @media (max-width: 576px) {
