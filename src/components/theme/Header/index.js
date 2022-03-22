@@ -36,7 +36,7 @@ function Header() {
                                 <Link to="contact" className="nav-link">Contato</Link>
                             </li>
                             <li className="nav-item">
-                                <a href="https://wa.me/5531971049892" target="_blank" className="nav-link"><FontAwesomeIcon icon={faWhatsapp}/> (31) 97104-9892</a>
+                                <a href="https://wa.me/5531971389460" target="_blank" className="nav-link"><FontAwesomeIcon icon={faWhatsapp}/> (31) 9 7138-9460</a>
                             </li>
                         </ul>
                     </div>

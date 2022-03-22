@@ -271,7 +271,7 @@ export const Home = () => {
                     />
                 </div>
                 <div className="text-center p-3">
-                    <a href="https://www.behance.net/lucasferreira-me" target="_blank">&#187; Confira meu portfólio completo do Behance &#171;</a>
+                    <a href="https://lucas-ferreira.com/pessoal" target="_blank">&#187; Confira um pouco mais do meu Portfólio &#171;</a>
                 </div>
             </div>
 
@@ -297,8 +297,8 @@ export const Home = () => {
             </div>
 
             <div id="socialMedias">
-                <a href="https://www.instagram.com/lucasferreira.me/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
-                <a href="https://www.youtube.com/channel/UC-D7taGaOyz5CbigL5wlulQ?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
+                <a href="http://lucas-ferreira.com/instagram" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
+                <a href="http://lucas-ferreira.com/youtube" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faYoutube} /></a>
                 {/* <a href="https://github.com/Luckhas" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a> */}
             </div>
         </main>
