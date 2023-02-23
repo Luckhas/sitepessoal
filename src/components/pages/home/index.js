@@ -5,6 +5,8 @@ import { faWindowRestore, faAddressCard, faMarker, faLaptopCode, faCogs, faFileA
 import { faAdobe, faInstagram, faYoutube, faGithub } from '@fortawesome/free-brands-svg-icons';
 import api from '../../../services/api';
 import { toast } from 'react-toastify';
+import Iframe from 'react-iframe';
+import { withResizeDetector } from 'react-resize-detector';
 
 import './styles';
 import './styles.css';
@@ -26,7 +28,7 @@ export const Home = () => {
 
     function handleResquest(e) {
         e.preventDefault();
-        if(sended) return;
+        if (sended) return;
         api.post(
             '/mainApplication/sendMail.php',
             {
@@ -52,8 +54,34 @@ export const Home = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                });
+            });
         });
+    }
+
+    const [myage, setMyage] = useState(null)
+
+    useEffect(() => {
+        const birth = new Date("1993-12-30");
+        const currentDate = new Date();
+        let age = currentDate.getFullYear() - birth.getFullYear();
+        // let age = currentDate.getFullYear();
+
+        const monthsDifference = currentDate.getMonth() - birth.getMonth();
+        console.log(currentDate.getFullYear)
+
+        if (monthsDifference < 0 || (monthsDifference === 0 && currentDate.getDate() < birth.getDate())) {
+            age--;
+        }
+
+        setMyage(age);
+    }, []);
+
+
+    const [iframeHeight, setIframeHeight] = useState(0);
+
+    function handleResize(width) {
+        const aspectRatio = 0.75; // Replace with the aspect ratio of the embedded page
+        setIframeHeight(width * aspectRatio);
     }
 
     return (
@@ -77,15 +105,15 @@ export const Home = () => {
                                 id="typewriter"
                                 onInit={(typewriter) => {
                                     typewriter.changeDelay(40).typeString('Montar o site da sua empresa')
-                                    .pauseFor(2500).deleteAll(40)
-                                    .typeString('Criar um blog para compartilhar suas ideias')
-                                    .pauseFor(2500).deleteAll(40)
-                                    .typeString('Desenvolver um sistema inovador para o mercado')
-                                    .pauseFor(2500).deleteAll(40)
-                                    .typeString('Uma nova identidade visual para suas redes sociais')
-                                    .pauseFor(2500).deleteAll(40)
-                                    .typeString('O que eu posso fazer por você hoje').changeCursor('?')
-                                    .start();
+                                        .pauseFor(2500).deleteAll(40)
+                                        .typeString('Criar um blog para compartilhar suas ideias')
+                                        .pauseFor(2500).deleteAll(40)
+                                        .typeString('Desenvolver um sistema inovador para o mercado')
+                                        .pauseFor(2500).deleteAll(40)
+                                        .typeString('Uma nova identidade visual para suas redes sociais')
+                                        .pauseFor(2500).deleteAll(40)
+                                        .typeString('O que eu posso fazer por você hoje').changeCursor('?')
+                                        .start();
                                 }}
                             />
                         </div>
@@ -101,30 +129,30 @@ export const Home = () => {
                 <div className="container p-5">
                     <div className="row">
                         <div className="col">
-                            <h3><FontAwesomeIcon icon={faAddressCard}/> Sobre mim</h3>
-                            <p>Meu nome é Lucas Ferreira, nasci no estado de Minas Gerais e tenho 26 anos atualmente.</p>
+                            <h3><FontAwesomeIcon icon={faAddressCard} /> Sobre mim</h3>
+                            <p>Meu nome é Lucas Ferreira, nasci no estado de Minas Gerais e tenho {myage} anos atualmente.</p>
 
-                            <p>Sou estudante de Engenharia de Software e gosto bastante da área de desenvolvimento web.</p>
+                            <p>Sou estudante de Engenharia de Software e atuo como encarregador de comunicação do município de Belo Vale - MG.</p>
 
-                            <p>Faço freelas para desenvolvimento de sites, blog, apps etc...</p>
+                            <p>Faço trabalhos para desenvolvimento de sites institucionais, blog, e-commerce etc...</p>
 
                             <p>Mas também faço artes digitais tanto para impressão quanto para web. Se precisar de alguem para dar uma revitalizada nas suas redes sociais ou na identidade visual do seu negócio, pode contar comigo ;) </p>
                         </div>
                         <div className="col">
-                            <h3><FontAwesomeIcon icon={faMarker}/> Habilidades com Design</h3>
+                            <h3><FontAwesomeIcon icon={faMarker} /> Habilidades com Design</h3>
                             <ul>
                                 <li>Criação de temas para sites, blogs & etc</li>
                                 <li>Artes para impressão / Flyers, Folder, Cartões de Visita...</li>
                                 <li>Identidade visual para redes sociais.</li>
                                 <li className="pb-3">Artes para Redes Sociais, templates para postagens recorrentes e similares</li>
-                                <h3><FontAwesomeIcon icon={faAdobe}/> Softwares que Utilizo</h3>
+                                <h3><FontAwesomeIcon icon={faAdobe} /> Softwares que Utilizo</h3>
                                 <li>Photoshop</li>
                                 <li>Adobe XD</li>
                                 <li>Illustrator</li>
                             </ul>
                         </div>
                         <div className="col">
-                            <h3><FontAwesomeIcon icon={faLaptopCode}/> Linguagens que uso</h3>
+                            <h3><FontAwesomeIcon icon={faLaptopCode} /> Linguagens que uso</h3>
                             <ul>
                                 <li>HTML 5</li>
                                 <li>CSS 3</li>
@@ -152,17 +180,17 @@ export const Home = () => {
                                     Posso criar belos sites para sua empresa ou negócio. Layouts limpos, agradaveis e resposivos para todos os tipos de tela.
                                 </p>
                             </div>
-                            <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faWindowRestore} className="col-3 col-sm-5" />
                         </div>
                         <div className="row">
-                            <FontAwesomeIcon icon={faCogs}  className="col-3 col-sm-5" />
+                            <FontAwesomeIcon icon={faCogs} className="col-3 col-sm-5" />
                             <div className="col text-left">
                                 <h2>Desenvolvimento de Sistemas</h2>
                                 <p>
                                     Você tem alguma ideia inovadora para o mercado, mas não sabe como tirar do papel? Ou precisa de um sistema para controlar o estoque da sua empresa?
                                 </p>
                                 <p>
-                                 Já sei, você está querendo criar sua nova loja online mas não sabe como?
+                                    Já sei, você está querendo criar sua nova loja online mas não sabe como?
                                 </p>
                                 <p>
                                     Bem, posso fazer tudo isso para você!
@@ -173,7 +201,7 @@ export const Home = () => {
                             <div className="col text-right">
                                 <h2>Implementação de Plataformas</h2>
                                 <p>
-                                    Existe alguma plataforma que você queria usar, mas não sabe por onde começar a implementa-la, como usar as ferramentas e instalar os plugins necessário para seu projeto ficar redondinho? 
+                                    Existe alguma plataforma que você queria usar, mas não sabe por onde começar a implementa-la, como usar as ferramentas e instalar os plugins necessário para seu projeto ficar redondinho?
                                 </p>
                                 <p>
                                     Comprou algum novo script para instalar no seu servidor, mas não tem o conhecimento para instala-la?
@@ -182,10 +210,10 @@ export const Home = () => {
                                     Chama no zap que podemos dar um jeito nisso.
                                 </p>
                             </div>
-                            <FontAwesomeIcon icon={faFileAlt} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faFileAlt} className="col-3 col-sm-5" />
                         </div>
                         <div className="row">
-                            <FontAwesomeIcon icon={faHashtag} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faHashtag} className="col-3 col-sm-5" />
                             <div className="col text-left">
                                 <h2>Design para Redes Sociais</h2>
                                 <p>
@@ -206,7 +234,7 @@ export const Home = () => {
                                     Tradicional design gráfico. Banners, Flyers, Folhetos, Cartões de Visitas e tudo que cerca essa área. Meu Illustrator ao seu dispor.
                                 </p>
                             </div>
-                            <FontAwesomeIcon icon={faImages} className="col-3 col-sm-5"/>
+                            <FontAwesomeIcon icon={faImages} className="col-3 col-sm-5" />
                         </div>
                     </div>
                 </div>
@@ -214,7 +242,19 @@ export const Home = () => {
 
             <div id="portfolio">
                 <h1 className="text-center my-5">Portfolio</h1>
-                <div className="portfolioContainer">
+
+                <iframe
+                    src="https://lucas-ferreira.com/pessoal/portfolios-2/"
+                    height={iframeHeight}
+                    onLoad={(event) => handleResize(event.target.clientWidth)}
+                    frameBorder="0"
+                    style={{width: 'calc(100% + 20px)'}}
+                ></iframe>
+
+                {/* <div className="portfolioContainer">
+
+                    
+
                     <Portfolio
                         title="Baymex"
                         type="Canal Youtube"
@@ -269,7 +309,7 @@ export const Home = () => {
                         url="https://www.behance.net/gallery/35379891/Maltarolandos-new-visual-identity"
                         bg="/assets/images/portfolio/4-small.jpg"
                     />
-                </div>
+                </div> */}
                 <div className="text-center p-3">
                     <a href="https://lucas-ferreira.com/pessoal" target="_blank">&#187; Confira um pouco mais do meu Portfólio &#171;</a>
                 </div>

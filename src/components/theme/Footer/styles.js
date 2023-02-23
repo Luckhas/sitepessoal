@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Container, Row, Col } from 'react-bootstrap';
+import ReactWhatsappButton from 'react-whatsapp-button';
+
 const data = new Date();
 var getYear = data.getFullYear();
 
@@ -15,6 +15,12 @@ export const Footer = () => {
                     Feito com &#128150; por  <strong>Lucas Ferreira &copy;</strong>  2020 - {getYear} Todos os direito reservados
                 </p>
             </div>
+            <ReactWhatsappButton
+                countryCode="55"
+                phoneNumber="31971389460"
+                animated
+                message="Olá Lucas, estou entrando em contato através do seu website. Podemos conversar?"
+            />
         </footer>
     );
 }
