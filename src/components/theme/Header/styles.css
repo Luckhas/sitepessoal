@@ -28,7 +28,7 @@ header > #navbar {
 }
 header .navbar-brand img {
     height: 30px;
-    margin: 10px 0;
+    margin: 10px 0 10px 30px;
 }
 
 .navbar-toggler-icon {
